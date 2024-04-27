@@ -14,7 +14,8 @@ class UserControllerTest extends TestCase
     public function testStore()
     {
         $formData = [
-            'name' => $this->faker->name,
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail,
             'password' => 'password',
             'address' => null  
@@ -30,7 +31,8 @@ class UserControllerTest extends TestCase
         $user = User::factory()->create();
 
         $updateData = [
-            'name' => 'Updated Name',
+            'first_name' => 'Updated Name',
+            'last_name' => 'Updated Last name',
             'email' => $user->email, // No change to email
         ];
 
@@ -39,7 +41,8 @@ class UserControllerTest extends TestCase
         $response->assertStatus(200)
                  ->assertJson([
                      'id' => $user->id,
-                     'name' => 'Updated Name',
+                     'first_name' => 'Updated Name',
+                     'last_name' => 'Updated Last name',
                      'email' => $user->email
                  ]);
     }
@@ -65,7 +68,7 @@ class UserControllerTest extends TestCase
         $response->assertStatus(200)
                  ->assertJsonCount(5)
                  ->assertJsonStructure([
-                     '*' => ['id', 'name', 'email']
+                     '*' => ['id', 'first_name', 'last_name', 'email']
                  ]);
     }
 }

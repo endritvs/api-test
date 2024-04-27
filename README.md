@@ -1,25 +1,47 @@
-Documentation for API
+# Documentation
 
-POST METHOD: http://127.0.0.1:8000/api/users
+## Setup 
+
+### PHP Version: 8.1.3
+
+Commands needed to run
+1. composer install
+2. Setup .env file with DB connection
+3. php artisan migrate
+4. php artisan test
+5. php artisan serve
+6. php artisan db:seed
+7. Testing the collection from POSTMAN
+
+
+## POST METHOD: http://127.0.0.1:8000/api/users
+
+```json
 {
-"name": "Endrit Saiti",
-"email": "endritsaiti8@gmail.com",
-"password": "password",
-"address": "RR Gjilanit 2"
-}  
+    "first_name": "Dorothea",
+    "last_name": "Kemmer",
+    "email": "rgraham@example.net",
+    "password": "password",
+    "address": "6553 Krajcik Village\nSouth Lupe, ME 06396-8624"
+}
+```
 
-GET METHOD: http://127.0.0.1:8000/api/users
+## GET METHOD: http://127.0.0.1:8000/api/users
+
 Should return all users on DB  
 
-PUT METHOD: http://127.0.0.1:8000/api/users/1
+## PUT METHOD: http://127.0.0.1:8000/api/users/1
+
+```json
 {
-"name": "Endrit Saiti",
-"email": "endritsaiti8@gmail.com",
-"password": "password",
-"address": ""
-}  
+    "first_name": "Dorothea",
+    "last_name": "Kemmer",
+    "email": "rgraham@example.net",
+    "password": "password",
+    "address": ""
+}
+```
 
-DELETE METHOD: http://127.0.0.1:8000/api/users/1
+## DELETE METHOD: http://127.0.0.1:8000/api/users/1
+
 Should return success:true if it founds the user
-
-

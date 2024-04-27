@@ -5,15 +5,17 @@ namespace App\Domain\Entities;
 class User
 {
     public $id;
-    public $name;
+    public $first_name;
+    public $last_name;
     public $email;
     public $password;
     public $address; // Optional
 
-    public function __construct($id,$name, $email, $password, $address = null)
+    public function __construct($id,$first_name, $last_name, $email, $password, $address = null)
     {
         $this->id = $id;
-        $this->name = $name;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
         $this->email = $email;
         $this->password = $password;
         $this->address = $address;

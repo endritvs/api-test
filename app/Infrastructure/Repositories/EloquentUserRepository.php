@@ -20,7 +20,8 @@ class EloquentUserRepository implements UserRepository
 
         return new UserEntity(
             $userModel->id,
-            $userModel->name,
+            $userModel->first_name,
+            $userModel->last_name,
             $userModel->email,
             $userModel->password,
             $userModel->userDetails->address ?? null,
@@ -35,7 +36,8 @@ class EloquentUserRepository implements UserRepository
 
         return new UserEntity(
             $userModel->id,
-            $userModel->name,
+            $userModel->first_name,
+            $userModel->last_name,
             $userModel->email,
             $userModel->password,
             $attributes['address'] ?? NULL,
@@ -60,7 +62,8 @@ class EloquentUserRepository implements UserRepository
         return $users->map(function ($userModel) {
             return new UserEntity(
                 $userModel->id,
-                $userModel->name,
+                $userModel->first_name,
+                $userModel->last_name,
                 $userModel->email,
                 $userModel->password,
                 $userModel->userDetails->address ?? null,
