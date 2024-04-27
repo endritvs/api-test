@@ -12,6 +12,7 @@ Commands needed to run
 5. php artisan serve
 6. php artisan db:seed
 7. Testing the collection from POSTMAN
+8. https://we.tl/t-ZWn0by0WsD - API COLLECTION TO IMPORT IN POSTMAN
 
 
 ## POST METHOD: http://127.0.0.1:8000/api/users
